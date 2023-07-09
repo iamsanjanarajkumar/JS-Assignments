@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LARGEST OF TWO NUMBERS</title>
+  </head>
+  <body>
+    <h1>Largest of two number</h1>
+    <script>
+      var input1 = parseInt(prompt("Enter first number:"));
+      var input2 = parseInt(prompt("Enter second number:"));
+      if (input1 == input2) {
+        document.write("<h2>" + input1 + " is equal to " + input2 + "</h2>");
+      } else if (input1 > input2) {
+        document.write(
+          "<h2>" + input1 + " is greater  than " + input2 + "</h2>"
+        );
+      } else {
+        document.write("<h2>" + input1 + " is lesser than " + input2 + "</h2>");
+      }
+    </script>
+  </body>
+</html>

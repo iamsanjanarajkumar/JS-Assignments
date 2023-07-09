@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program to find the year is Leap year or Not</title>
+  </head>
+  <body>
+    <h3>
+      Enter a Year:<input type="text" id="year" /><button onclick="leapFun()">
+        Check
+      </button>
+    </h3>
+    <h3 id="tempPara" style="display: none">It is <span id="res"></span>Year</h3>
+
+    <script>
+      var yr, temp;
+      function leapFun() {
+        yr = parseInt(document.getElementById("year").value);
+        if (yr) {
+          temp = document.getElementById("tempPara");
+          temp.style.display = "block";
+          if (yr % 4 == 0 && yr % 100 != 0) {
+            document.getElementById("res").innerHTML = "a Leap";
+          } else if (yr % 400 == 0)
+            document.getElementById("res").innerHTML = "a Leap";
+          else document.getElementById("res").innerHTML = "not a Leap";
+        }
+      }
+    </script>
+  </body>
+</html>

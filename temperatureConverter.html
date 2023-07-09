@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+  </head>
+  <body>
+    <center>
+      <h1>TEMPERATURE CONVERTER (using switch)</h1>
+      <form onsubmit="tempHandler(event)">
+        <div>
+          <label for="op">CHOOSE A TEMPERATURE</label>
+          <select name="op" id="op">
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="celsius">Celsius</option>
+            <option value="kelvin">Kelvin</option>
+          </select>
+        </div>
+        <div>
+          <label for="input">ENTER A VALUE</label>
+          <input type="number" id="input" name="input" required />
+        </div>
+        <button type="submit">Check TEMPERATURE</button>
+      </form>
+      <div id="result1"></div>
+      <div id="result2"></div>
+    </center>
+
+    <script>
+      function tempHandler(event) {
+        event.preventDefault();
+
+        var key = document.getElementById("op").value;
+        var temp = document.getElementById("input").value;
+
+        var x = Number(temp);
+        var res1 = 0;
+        var res2 = 0;
+
+        switch (key) {
+          case "fahrenheit":
+            res1 = x * 1.8 + 32;
+            document.title = `Fahrenheit ${res1}`;
+            document.getElementById(
+              "result1"
+            ).innerHTML = `<h1> Fahrenheit(F) =${res1}</h1>`;
+
+            res2 = x + 273.15;
+            document.getElementById(
+              "result2"
+            ).innerHTML = `<h1> Kelvin(K) =${res2}</h1>`;
+
+            break;
+
+          case "celsius":
+            res1 = (x - 32) / 1.8;
+            document.title = `Celsius ${res1}`;
+            document.getElementById(
+              "result1"
+            ).innerHTML = `<h1> Celsius =${res1}</h1>`;
+
+            res2 = (x - 32) / 1.8 + 273.15;
+            document.getElementById(
+              "result2"
+            ).innerHTML = `<h1> Kelvin(K) =${res2}</h1>`;
+            break;
+
+          case "kelvin":
+            res1 = (x - 273.15) * 1.8 + 32;
+            document.title=`Kelvin ${res1}`;
+        }
+      }
+    </script>
+  </body>
+</html>

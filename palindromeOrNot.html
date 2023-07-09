@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PALINDROME OR NOT</title>
+  </head>
+  <body>
+    <center>
+      <h1>NUMBER IS PALINDROME OR NOT!!</h1>
+      <h3>
+        Enter a string or a number to check for Palindrome:<input
+          type="text"
+          id="value"
+        /><button onclick="palindromeFun()">Check</button>
+      </h3>
+      <h3 id="tempPara" style="display: none">It is <span id="res"></span></h3>
+    </center>
+
+    <script>
+      var str, temp;
+      function palindromeFun() {
+        str = document.getElementById("value").value;
+        if (str) {
+          temp = document.getElementById("tempPara");
+          temp.style.display = "block";
+          const len = str.length;
+          for (let i = 0; i < len / 2; i++) {
+            if (str[i] !== str[len - 1 - i]) {
+              document.getElementById("res").innerHTML = "not a Palindrome";
+            } else {
+              document.getElementById("res").innerHTML = "a Palindrome";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
