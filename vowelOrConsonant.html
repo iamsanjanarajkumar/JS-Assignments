@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check whether the character is Vowel or Consonant</title>
+  </head>
+  <body>
+    <center>
+      <h1>Check whether the character is Vowel or Consonant</h1>
+    </center>
+    <hr />
+    <h2>
+      Enter the Character: <input id="char" /><button onclick="checkVowel()">
+        Check
+      </button>
+    </h2>
+    <h3 
+    id="parameter" style="display: none">It is <span id="res"></span></h3>
+
+    <script>
+      var ch;
+      function checkVowel() {
+        ch = document.getElementById("char").value;
+        if (ch) {
+          temp = document.getElementById("parameter");
+          temp.style.display = "block";
+          if ((ch >= "a" && ch <= "z") || (ch >= "A" && ch <= "Z")) {
+            if (ch == "a" || ch == "e" || ch == "i" || ch == "o" || ch == "u")
+              document.getElementById("res").innerHTML = "a Vowel";
+            else if (
+              ch == "A" ||
+              ch == "E" ||
+              ch == "I" ||
+              ch == "O" ||
+              ch == "U"
+            )
+              document.getElementById("res").innerHTML = "a Vowel";
+            else document.getElementById("res").innerHTML = "a Consonant";
+          } else
+            document.getElementById("res").innerHTML =
+              "neither Vowel nor Consonant";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHECK whether its EQUILATERAL, SCALENE OR ISOSCELES TRIANGLE</title>
+  </head>
+  <body>
+    <center>
+      <h1>Check whether its EQUILATERAL, SCALENE OR ISOSCELES TRIANGLE</h1>
+      <form onsubmit="triangleHandle(event)">
+        <div>
+          <label for="input1">ENTER Side-1</label>
+          <input type="number" id="input1" name="input1" required />
+        </div>
+        <div>
+          <label for="input2">ENTER Side-2</label>
+          <input type="number" id="input2" name="input2" required />
+        </div>
+        <div>
+          <label for="input3">ENTER Side-3</label>
+          <input type="number" id="input3" name="input3" required />
+        </div>
+        <button type="submit">Check TRIANGLE</button>
+      </form>
+      <!-- <div id="res1"></div> -->
+      <div id="res2"></div>
+    </center>
+
+    <script>
+      function triangleHandler(event) {
+        event.preventDefault();
+
+        var x = document.getElementById("input1").value;
+        var y = document.getElementById("input2").value;
+        var z = document.getElementById("input3").value;
+
+        if (x == y && y == z) {
+          document.getElementById(
+            "res2"
+          ).innerHTML = `<h2> It's an EQUILATERAL TRIANGLE! </h2>`;
+        } else if (x == y || y == z || z == x) {
+          document.getElementById(
+            "res2"
+          ).innerHTML = `<h2> It's an ISOSCELES TRIANGLE! </h2>`;
+        } else {
+          document.getElementById(
+            "res2"
+          ).innerHTML = `<h2> It's a SCALENE TRIANGLE! </h2>`;
+        }
+      }
+    </script>
+  </body>
+</html>

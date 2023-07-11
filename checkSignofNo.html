@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program to check the sign of a Number</title>
+  </head>
+  <body>
+    <h2>Checking the SIGN of a Number</h2>
+    <!-- <script>
+      var number = parseInt(prompt("Enter a Number:"));
+      if (number >= 0) {
+        if (number == 0) {
+          document.write("<h3>The Number is ZERO!</h3>");
+        } else {
+          document.write("<h3> The Number is POSITIVE </h3>");
+        }
+      } else {
+        document.write("<h3>The Number is NEGATIVE </h3>");
+      }
+    </script> -->
+    <!--It returns 1 if the argument passed is a positive number.
+      It returns -1 if the argument passed is a negative number.
+       It returns 0 if the argument passed is a positive zero.
+        It returns -0 if the argument passed is a negative zero.
+          If none of the above cases match, it returns Nan.-->
+    <script>
+      var number = parseInt(prompt("Enter the number"));
+      document.write("<h3> The Number is " + Math.sign(number) + "</h3>");
+    </script>
+  </body>
+</html>

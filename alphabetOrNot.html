@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program to check whether the character is ALPHABET OR NOT</title>
+  </head>
+  <body>
+    <center>
+      <h1>Program to check whether the character is ALPHABET OR NOT</h1>
+    </center>
+    <hr />
+    <script>
+    //   var a = prompt("Enter character:");
+      function charIsLetter(a) {
+        if (typeof a !== "string") {
+          document.write("Its not an ALPHABET");
+        } else if (a.toLowerCase() !== a.toUpperCase()) {
+          document.write("Its an ALPHABET");
+        }
+      }
+      charIsLetter("x");
+    </script>
+  </body>
+</html>
