@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMPLOYEE DETAILS TABLE</title>
+    <style>
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(45deg, #49a09d, #5f2c82);
+        font-family: sans-serif;
+        font-weight: 100;
+      }
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      img {
+        max-width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+      table {
+        width: 1000px;
+        border-collapse: collapse;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      th,
+      td {
+        padding: 15px;
+
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+
+      th {
+        text-align: center;
+      }
+
+      thead,
+      th {
+        background-color: #55608f;
+      }
+
+      tbody,
+      tr {
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
+      }
+      td {
+        position: relative;
+        &:hover {
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -9999px;
+            bottom: -9999px;
+            background-color: rgba(255, 255, 255, 0.2);
+            /* z-index: -1; */
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h2 style="color: white">EMPLOYEE INFORMATION</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Emp-ID</th>
+
+              <th>Employee Name</th>
+              <th>Position</th>
+              <th>Department</th>
+              <th>Email-ID</th>
+              <th>Salary</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </center>
+    <script>
+      var empData = [
+        {
+          empId: 100,
+          //   empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "John",
+          employeePosition: "Manager",
+          employeeDept: "Administration",
+          employeeEmail: "John@example.com",
+          employeeSalary: "$1000",
+        },
+        {
+          empId: 101,
+          //   empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "Mary",
+          employeePosition: "Developer",
+          employeeDept: "Development",
+          employeeEmail: "mary@example.com",
+          employeeSalary: "$100.78",
+        },
+        {
+          empId: 102,
+          //   empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "Daffodil",
+          employeePosition: "Tech Support",
+          employeeDept: "Technical",
+          employeeEmail: "daffodil@example.com",
+          employeeSalary: "$3000",
+        },
+        {
+          empId: 103,
+          //   empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "Rachel",
+          employeePosition: "Front-End Developer",
+          employeeDept: "Development",
+          employeeEmail: "rachel@example.com",
+          employeeSalary: "$600.60",
+        },
+        {
+          empId: 104,
+          //   empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "Monica",
+          employeePosition: " Technical Manager",
+          employeeDept: "Administration",
+          employeeEmail: "monica@example.com",
+          employeeSalary: "$100.98",
+        },
+        {
+          empId: 105,
+          //   empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "Ross",
+          employeePosition: "Product Support",
+          employeeDept: "Administration",
+          employeeEmail: "ross@example.com",
+          employeeSalary: "$9000",
+        },
+        {
+          empId: 106,
+          //   empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "Pheobe",
+          employeePosition: "Backe-End Developer",
+          employeeDept: "Development",
+          employeeEmail: "pheobe@example.com",
+          employeeSalary: "$7000",
+        },
+        {
+          empId: 107,
+          //   empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "John",
+          employeePosition: "Manager",
+          employeeDept: "Administration",
+          employeeEmail: "John@example.com",
+          employeeSalary: "$1000",
+        },
+        {
+          empId: 108,
+          //   empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "Joey",
+          employeePosition: "Assistant Manager",
+          employeeDept: "Administration",
+          employeeEmail: "joey@example.com",
+          employeeSalary: "$800.90",
+        },
+        {
+          empId: 109,
+          //   empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "Chandler",
+          employeePosition: "Business Manager",
+          employeeDept: "Business",
+          employeeEmail: "chandler@example.com",
+          employeeSalary: "$8900",
+        },
+        {
+          empId: 110,
+          empImg: "https://i.pravatar.cc/40?img=40",
+          employeeName: "Rose",
+          employeePosition: "Voice Support",
+          employeeDept: "Tech",
+          employeeEmail: "rose@example.com",
+          employeeSalary: "$9000",
+        },
+      ];
+      let table = document.querySelector("tbody");
+      empData.map((item) => {
+        table.innerHTML =
+          table.innerHTML +
+          `
+            <tr>
+          <td >${item.empId}</td>
+          <td> ${item.employeeName}</td>
+          <td >${item.employeePosition}</td>
+          <td >${item.employeeDept}</td>
+          <td >${item.employeeEmail}</td>
+          <td >${item.employeeSalary}</td>
+        </tr>`;
+      });
+    </script>
+  </body>
+</html>

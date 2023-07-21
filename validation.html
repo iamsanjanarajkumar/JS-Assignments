@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation Contact Form</title>
+    <style>
+      body {
+        background: linear-gradient(to left, cornflowerblue, crimson);
+      }
+      form {
+        border: 2px solid black;
+        border-radius: 20px;
+        width: 400px;
+        height: 680px;
+        background-color: blanchedalmond;
+        padding: 10px;
+      }
+      form > h2 {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Contact Validation Form</h1>
+      <hr />
+      <form action="" onsubmit="submitHandler()">
+        <h2>Contact Form</h2>
+        <label
+          for="user"
+          style="
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+              'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          "
+          >Full Name</label
+        ><br />
+        <input
+          type="text"
+          name="user"
+          id="user"
+          style="width: 340px; border-radius: 10px; height: 28px"
+        /><br />
+        <strong id="status1"></strong><br /><br />
+        <label
+          for="user"
+          style="
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+              'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          "
+          >Email-ID</label
+        ><br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          style="width: 340px; border-radius: 10px; height: 28px"
+        /><br />
+        <strong id="status2"></strong><br /><br />
+        <label
+          for="mobile"
+          style="
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+              'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          "
+          >Mobile Number </label
+        ><br />
+        <input
+          type="text"
+          name="mobile"
+          id="mobile"
+          maxlength="10"
+          style="width: 340px; border-radius: 10px; height: 28px"
+        /><br />
+        <strong id="status3"></strong>
+        <br /><br />
+        <div>
+          <label
+            for="city"
+            style="
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            "
+            >City</label
+          ><br />
+          <select
+            id="city"
+            name="city"
+            checked
+            style="width: 340px; border-radius: 10px; height: 30px"
+            placeholder="Choose a city"
+          >
+            <option selected>--Choose a City--</option>
+
+            <option value="bangalore">Bangalore</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="chennai">Chennai</option>
+            <option value="kochi">Kochi</option>
+            <option value="mumbai">Mumbai</option></select
+          ><br />
+          <strong id="status4"></strong>
+        </div>
+        <br />
+        <div>
+          <label
+            for="gender"
+            style="
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            "
+            >Gender</label
+          ><br />
+          <input type="radio" id="female" name="gender" value="female" />
+          <label
+            for="female"
+            style="
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            "
+            >Female</label
+          >
+          <input type="radio" id="male" name="gender" value="male" />
+          <label
+            for="male"
+            style="
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            "
+            >Male</label
+          ><br />
+          <strong id="status5"></strong>
+        </div>
+        <br />
+        <div>
+          <label
+            for="languages"
+            style="
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            "
+            >Language</label
+          ><br />
+          <input type="checkbox" id="kan" name="lang" value="Kannada" />
+          <label for="kan">Kannada</label>
+          <input type="checkbox" id="eng" name="lang" value="English" />
+          <label for="eng">English</label>
+          <input type="checkbox" id="hindi" name="lang" value="Hindi" />
+          <label for="hindi">Hindi</label><br />
+          <input type="checkbox" id="telegu" name="lang" value="Telegu" />
+          <label for="telegu">Telegu</label>
+          <input type="checkbox" id="tamil" name="lang" value="Tamil" />
+          <label for="tamil">Tamil</label>
+          <input type="checkbox" id="mal" name="lang" value="Malayalam" />
+          <label for="mal">Malayalam</label><br />
+          <strong id="status6"></strong>
+        </div>
+        <br />
+        <input
+          type="submit"
+          value="Submit"
+          style="
+            width: 160px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: cornflowerblue;
+          "
+        />
+        <input
+          type="reset"
+          value="Reset"
+          style="
+            width: 160px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: crimson;
+          "
+        />
+      </form>
+    </center>
+    <script>
+      function submitHandler() {
+        event.preventDefault();
+        var user = document.getElementById("user");
+        var email = document.getElementById("email").value;
+        var mobileNO = document.getElementById("mobile").value;
+        var city = document.getElementById("city");
+
+        if (user.value.length == 0) {
+          document.getElementById("status1").innerHTML = "Enter User Name";
+        } else if (user.value.length <= 4) {
+          document.getElementById("status1").innerHTML =
+            "user input length must be greater than 4 character";
+        } else if (user.value.length > 4) {
+          document.getElementById("status1").innerHTML = "Valid User Name";
+        }
+        let regex = /^\S+@\S+\.\S+$/; //email Address verification
+        if (email.length == 0) {
+          document.getElementById("status2").innerHTML = "Enter Your Email-ID";
+        } else {
+          if (regex.test(email) === false) {
+            document.getElementById("status2").innerHTML =
+              "Invalid Email Address";
+          } else {
+            document.getElementById("status2").innerHTML =
+              "Valid Email Address";
+          }
+        }
+        var regex1 = /^[6-9]\d{9}$/; //Mobile No Verification
+        if (mobileNO === "") {
+          document.getElementById("status3").innerHTML =
+            "Mobile Field must be filled";
+        } else {
+          if (regex1.test(mobileNO) === false) {
+            document.getElementById("status3").innerHTML =
+              "Invalid Indian Mobile Number";
+          } else {
+            document.getElementById("status3").innerHTML =
+              "Valid  Indian Mobile Number";
+          }
+        }
+        var selectedCity = city.options[city.selectedIndex].value;
+        if (selectedCity == "bangalore") {
+          document.getElementById("status4").innerHTML =
+            "You have selected " + selectedCity;
+        } else if (selectedCity == "hyderabad") {
+          document.getElementById("status4").innerHTML =
+            "You have selected " + selectedCity;
+        } else if (selectedCity == "chennai") {
+          document.getElementById("status4").innerHTML =
+            "You have selected " + selectedCity;
+        } else if (selectedCity == "kochi") {
+          document.getElementById("status4").innerHTML =
+            "You have selected " + selectedCity;
+        } else if (selectedCity == "mumbai") {
+          document.getElementById("status4").innerHTML =
+            "You have selected " + selectedCity;
+        } else {
+          document.getElementById("status4").innerHTML = "Please Select a City";
+        }
+        var getSelectedGender = document.querySelector(
+          'input[name="gender"]:checked'
+        );
+        if (getSelectedGender != null) {
+          document.getElementById("status5").innerHTML =
+            "You have selected " + getSelectedGender.value + "button";
+        } else {
+          document.getElementById("status5").innerHTML = "Please select Gender";
+        }
+        var boxes = document.querySelector('input[name="lang"]:checked');
+        // var selectedValues = [];
+        if (boxes != null) {
+          document.getElementById("status6").innerHTML = "Valid Selection";
+        } else {
+          document.getElementById("status6").innerHTML =
+            "Please select a  Language";
+        }
+      }
+    </script>
+  </body>
+</html>

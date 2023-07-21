@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Application Form</title>
+    <style>
+      body {
+        background: url(Assets/Images/static\ application.jpg) no-repeat center;
+        background-size: cover;
+      }
+      form {
+        margin-top: 80px;
+        /* border: 2px solid black; */
+        width: 500px;
+        height: 360px;
+        border-radius: 20px;
+        background: linear-gradient(to left, rgb(193, 228, 228), pink);
+        padding: 20px;
+        box-shadow: -10px 10px 30px cornflowerblue;
+        /* display: flex;
+        flex: row wrap; */
+      }
+      h1 {
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+      div {
+        background-color: white;
+        border: 1px solid black;
+        margin: 5px;
+        width: 100px;
+        height: 30px;
+        padding-top: 5px;
+        border-radius: 20px;
+      }
+      #items {
+        display: flex;
+        flex: row wrap;
+        padding-left: 45px;
+        gap: 16px;
+        margin-top: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <!-- <h1> Employee Application Form</h1> -->
+      <form>
+        <section><h1>Employee Application Form</h1></section>
+        <section id="items">
+          <span
+            >Employee_ID
+            <div id="emp-ID"></div
+          ></span>
+          <span
+            >Name
+            <div id="name" style="width: 160px;"></div
+          ></span>
+          <span
+            >Mobile Number
+            <div id="mobile"></div
+          ></span>
+        </section>
+        <section id="items">
+          <span
+            >Email-ID
+            <div id="email" style="width: 260px"></div
+          ></span>
+          <span
+            >Gender
+            <div id="gender"></div
+          ></span>
+        </section>
+        <section><h2>Address</h2></section>
+        <section id="items">
+          <span
+            >Street
+            <div id="street" style="width: 150px"></div
+          ></span>
+          <span
+            >City
+            <div id="city"></div
+          ></span>
+          <span
+            >Pincode
+            <div id="pincode" style="width: 100px"></div
+          ></span>
+        </section>
+      </form>
+    </center>
+    <script>
+      let employee = {
+        employee_ID: 120,
+        name: "Cristal",
+        mobile: 682 - 30,
+        email: "cristal@gmail.com",
+        gender: "Female",
+        address: {
+          street: "Avenue Street",
+          city: "New York",
+          pincode: "213",
+        },
+      };
+      document.getElementById("emp-ID").innerHTML = employee.employee_ID;
+      document.getElementById("name").innerHTML = employee.name;
+      document.getElementById("mobile").innerHTML = employee.mobile;
+      document.getElementById("email").innerHTML = employee.email;
+      document.getElementById("gender").innerHTML = employee.gender;
+      document.getElementById("street").innerHTML = employee.address.street;
+      document.getElementById("city").innerHTML = employee.address.city;
+      document.getElementById("pincode").innerHTML = employee.address.pincode;
+    </script>
+  </body>
+</html>
