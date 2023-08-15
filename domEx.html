@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        height: auto;
+        margin: 0%;
+      }
+      #userInfo {
+        padding: 20px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 20px;
+      }
+      #userInfo div {
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        padding: 20px;
+      }
+      #userInfo div img {
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        width: 200px;
+      }
+      #userInfo div a {
+        padding: 12px 14px;
+        background-color: slateblue;
+        color: white;
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="userInfo"></section>
+    <script>
+      var users = [
+        {
+          id: 1,
+          image: "https://i.pravatar.cc/40?img=20",
+          name: "John",
+          email: "John@example.com",
+          isAdmin: true,
+        },
+        {
+          id: 1,
+          image: "https://i.pravatar.cc/40?img=20",
+          name: "John",
+          email: "John@example.com",
+          isAdmin: true,
+        },
+        {
+          id: 1,
+          image: "https://i.pravatar.cc/40?img=20",
+          name: "John",
+          email: "John@example.com",
+          isAdmin: true,
+        },
+      ];
+
+      var products = [
+        {
+          id: 1,
+          title: "iPhone 9",
+          description: "An apple mobile which is nothing like apple",
+          price: 549,
+          discountPercentage: 12.96,
+          rating: 4.69,
+          stock: 94,
+          brand: "Apple",
+          category: "smartphones",
+          thumbnail: "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+        },
+        {
+          id: 2,
+          title: "iPhone X",
+          description:
+            "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          price: 899,
+          discountPercentage: 17.94,
+          rating: 4.44,
+          stock: 34,
+          brand: "Apple",
+          category: "smartphones",
+          thumbnail: "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+        },
+        {
+          id: 3,
+          title: "Samsung Universe 9",
+          description:
+            "Samsung's new variant which goes beyond Galaxy to the Universe",
+          price: 1249,
+          discountPercentage: 15.46,
+          rating: 4.09,
+          stock: 36,
+          brand: "Samsung",
+          category: "smartphones",
+          thumbnail: "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+        },
+        {
+          id: 4,
+          title: "OPPOF19",
+          description: "OPPO F19 is officially announced on April 2021.",
+          price: 280,
+          discountPercentage: 17.91,
+          rating: 4.3,
+          stock: 123,
+          brand: "OPPO",
+          category: "smartphones",
+          thumbnail: "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
+        },
+      ];
+      var container = document.querySelector("#userInfo");
+      users.forEach(function (val, index) {
+        //create html elements
+        let card = document.createElement("div");
+        let eImage = document.createElement("img");
+        let eName = document.createElement("h3");
+        let eEmail = document.createElement("p");
+        let eisAdmin = document.createElement("p");
+        let eLink = document.createElement("a");
+
+        //add contents / data to the element
+        eImage.src = val.image;
+        eImage.alt = "No image";
+        eName.textContent = `${val.id} ${val.name}`;
+        eEmail.textContent = val.email;
+        eisAdmin.textContent = val.isAdmin ? "Admin" : "Non-Admin";
+        eLink.href = val.image;
+        eLink.textContent = "Image Link";
+        eLink.target = "_blank";
+
+        card.appendChild(eImage);
+        card.appendChild(eName);
+        card.appendChild(eEmail);
+        card.appendChild(eisAdmin);
+        card.appendChild(eLink);
+
+        container.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

@@ -189,55 +189,70 @@
 
         if (user.value.length == 0) {
           document.getElementById("status1").innerHTML = "Enter User Name";
+          document.getElementById("status1").style.color = "red";
         } else if (user.value.length <= 4) {
           document.getElementById("status1").innerHTML =
             "user input length must be greater than 4 character";
+          document.getElementById("status1").style.color = "orangered";
         } else if (user.value.length > 4) {
           document.getElementById("status1").innerHTML = "Valid User Name";
+          document.getElementById("status1").style.color = "green";
         }
         let regex = /^\S+@\S+\.\S+$/; //email Address verification
         if (email.length == 0) {
           document.getElementById("status2").innerHTML = "Enter Your Email-ID";
+          document.getElementById("status2").style.color = "red";
         } else {
           if (regex.test(email) === false) {
             document.getElementById("status2").innerHTML =
               "Invalid Email Address";
+            document.getElementById("status2").style.color = "orangered";
           } else {
             document.getElementById("status2").innerHTML =
               "Valid Email Address";
+            document.getElementById("status2").style.color = "green";
           }
         }
         var regex1 = /^[6-9]\d{9}$/; //Mobile No Verification
         if (mobileNO === "") {
           document.getElementById("status3").innerHTML =
             "Mobile Field must be filled";
+          document.getElementById("status3").style.color = "red";
         } else {
           if (regex1.test(mobileNO) === false) {
             document.getElementById("status3").innerHTML =
               "Invalid Indian Mobile Number";
+            document.getElementById("status3").style.color = "orangered";
           } else {
             document.getElementById("status3").innerHTML =
               "Valid  Indian Mobile Number";
+            document.getElementById("status3").style.color = "green";
           }
         }
         var selectedCity = city.options[city.selectedIndex].value;
         if (selectedCity == "bangalore") {
           document.getElementById("status4").innerHTML =
             "You have selected " + selectedCity;
+          document.getElementById("status4").style.color = "green";
         } else if (selectedCity == "hyderabad") {
           document.getElementById("status4").innerHTML =
             "You have selected " + selectedCity;
+          document.getElementById("status4").style.color = "green";
         } else if (selectedCity == "chennai") {
           document.getElementById("status4").innerHTML =
             "You have selected " + selectedCity;
+          document.getElementById("status4").style.color = "green";
         } else if (selectedCity == "kochi") {
           document.getElementById("status4").innerHTML =
             "You have selected " + selectedCity;
+          document.getElementById("status4").style.color = "green";
         } else if (selectedCity == "mumbai") {
           document.getElementById("status4").innerHTML =
             "You have selected " + selectedCity;
+          document.getElementById("status4").style.color = "green";
         } else {
           document.getElementById("status4").innerHTML = "Please Select a City";
+          document.getElementById("status4").style.color = "red";
         }
         var getSelectedGender = document.querySelector(
           'input[name="gender"]:checked'
@@ -245,16 +260,20 @@
         if (getSelectedGender != null) {
           document.getElementById("status5").innerHTML =
             "You have selected " + getSelectedGender.value + "button";
+          document.getElementById("status5").style.color = "green";
         } else {
           document.getElementById("status5").innerHTML = "Please select Gender";
+          document.getElementById("status5").style.color = "red";
         }
         var boxes = document.querySelector('input[name="lang"]:checked');
         // var selectedValues = [];
         if (boxes != null) {
           document.getElementById("status6").innerHTML = "Valid Selection";
+          document.getElementById("status6").style.color = "green";
         } else {
           document.getElementById("status6").innerHTML =
             "Please select a  Language";
+          document.getElementById("status6").style.color = "red";
         }
       }
     </script>
